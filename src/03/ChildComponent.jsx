@@ -1,26 +1,37 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-class ChildComponent extends Component {
+class ChildComponent extends React.Component {
   render() {
-    const { objValue, requiredStringValue } = this.props;
+    const {
+      boolValue,
+      numValue,
+      arrayValue,
+      objValue,
+      nodeValue,
+      funcValue,
+    } = this.props;
 
     return (
       <div>
-        <div>객체 값: {String(Object.entries(objValue))}</div>
-        <div>필수 값: {requiredStringValue}</div>
+        <span>불리언값: {boolValue}</span>
+        <span>숫자값: {numValue}</span>
+        <span>배열값: {arrayValue}</span>
+        <span>객체값: {String(objValue)}</span>
+        <span>노드값: {nodeValue}</span>
+        <span>함수값: {String(funcValue)}</span>
       </div>
     );
   }
 }
 
 ChildComponent.propTypes = {
-  objValue: PropTypes.shape({
-    name: PropTypes.string,
-    age: PropTypes.number,
-  }),
-
-  requiredStringValue: PropTypes.string.isRequired,
-};
+  boolValue: PropTypes.bool,
+  numValue: PropTypes.number,
+  arrayValue: PropTypes.arrayOf(PropTypes.number),
+  objValue: PropTypes.object,
+  nodeValue: PropTypes.node,
+  funcValue: PropTypes.func,
+ } 
 
 export default ChildComponent;
