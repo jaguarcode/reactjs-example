@@ -35,7 +35,31 @@
   - CSS
   - Style Component
 - HigherOrder Component
+
   - Currying & Compose
+  - Decorator Pattern
+
+    - 독립된 데코레이터로 기능을 구성하기 위한 방법
+    - Java에서는 Interface 사용, Javascript에서는 Currying(Higher-order function) 사용
+
+    ```javascript
+    // 함수형 컴포넌트를 반환하는 하이어오더 컴포넌트
+    function higherOrderComponent(Compoenent) {
+      return function Enhanced(props) {
+        return <Component {...props} />;
+      };
+    }
+
+    // 클래스형 컴포넌트를 반환하는 하이어오더 컴포넌트
+    function higherOrderComponent(Component) {
+      return class Enhanced extends React.Component {
+        render() {
+          return <Component {...this.props} />;
+        }
+      };
+    }
+    ```
+
 - Context
 - Context API
   - Redux
