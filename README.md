@@ -40,7 +40,7 @@
   - Decorator Pattern
 
     - 독립된 데코레이터로 기능을 구성하기 위한 방법
-    - Java에서는 Interface 사용, Javascript에서는 Currying(Higher-order function) 사용
+    - Java에서는 Interface 사용, Javascript에서는 Currying(Higher-order function) 사용ㅏ
 
     ```javascript
     // 함수형 컴포넌트를 반환하는 하이어오더 컴포넌트
@@ -65,5 +65,15 @@
   - 다중 커링
 
 - Context
+
+  - Obserable Pattern
+  - 컴포넌트 간의 자료 의존성을 없애는 공급자와 소비자 개념
+  - 공급자에게 콜백 함수로 데이터 변경 요청 (Data Down, Action Up - DDAU 개념)
+  - 공급자 구현/ 컴포넌트에서 공급자 분리하기
+  - 소비자 하이어오더 컴포넌트로 구현
+  - 커링으로 중복 공급자 문제 해결하기
+  - 여러 공급자를 구독하는 소비자 만들기
+  - 하이어오더 컴포넌트 조합 충돌 문제 해결하기
+
 - Context API
   - Redux
