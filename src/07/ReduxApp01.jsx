@@ -1,13 +1,9 @@
 import React, { PureComponent } from 'react';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import configureStore from './configureStore';
 
 class ReduxApp extends PureComponent {
-  store = createStore(
-    (state) => state,
-    { loading: false, name: 'test' },
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  );
+  store = configureStore({ loading: false });
 
   render() {
     return <Provider store={this.store}>리덕스 예제</Provider>;
